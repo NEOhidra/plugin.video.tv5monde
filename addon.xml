@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.tv5monde" name="tv5monde" version="1.0.0" provider-name="jamontes">
+    <requires>
+        <import addon="xbmc.python" version="2.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">TV5 Monde videos (EN)</summary>
+        <description lang="en">TV5 Monde Plus videos (EN)</description>
+        <summary lang="es">TV5 Monde videos (ES)</summary>
+        <description lang="es">TV5 Monde Plus videos (ES)</description>
+        <summary lang="fr">TV5 Monde videos (FR)</summary>
+        <description lang="fr">TV5 Monde Plus videos (FR)</description>
+    </extension>
+</addon>

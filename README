@@ -1,0 +1,12 @@
+tv5monde: XBMC video plugin to watch the TV5 Monde videos from XBMC GUI.
+
+jamontes 2013
+
+Initial release 1.0.0
+
+This plugin allows to watch the videos from the TV5 Monde web page, selected by Category and ordered by date.
+
+This is the first release of the plugin.
+
+To install it simply download the zip file, and install as any other plugin from XBMC:
+ System->Settings->Add-ons->Install from zip file.

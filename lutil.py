@@ -31,7 +31,7 @@ def get_plugin_parms():
     _log("get_plugin_parms " + str(params))
 
     pattern_params  = re.compile('[?&]([^=&]+)=?([^&]*)')
-    options = { parameter : urllib.unquote_plus(value) for parameter, value in pattern_params.findall(params) }
+    options = dict((parameter, urllib.unquote_plus(value)) for (parameter, value) in pattern_params.findall(params))
 
     _log("get_plugin_parms " + repr(options))
     return options

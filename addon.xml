@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.tv5monde" name="tv5monde" version="1.0.0" provider-name="jamontes">
+<addon id="plugin.video.tv5monde" name="tv5monde" version="1.0.1" provider-name="jamontes">
     <requires>
         <import addon="xbmc.python" version="2.0"/>
     </requires>

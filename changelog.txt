@@ -9,3 +9,6 @@
 1.0.0
 - Refactoring and code optimization.
 - First public release.
+1.0.1
+- Fix a pre 2.7 python syntax error in get_plugin_parms to run over Windows 7. 
+- change fanart and icon images.

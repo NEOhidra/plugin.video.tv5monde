@@ -18,3 +18,5 @@
 - Modified plugin description.
 - Change the copyleft license from GPLv2 to GPLv3.
 - Eden and Frodo branches splited for pull to oficial repositories. 
+1.1.0
+- Change xbmc.python rel to 2.1.0 for Frodo branch.

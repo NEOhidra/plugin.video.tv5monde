@@ -1,17 +1,43 @@
 # _*_ coding: utf-8 _*_
 
 '''
-lutil: library functions for XBMC video plugins.
-These funtions are called from the main plugin module, aimed to ease and simplify the plugin development process.
-JAM 2013
-Release 0.1.0
+   lutil: library functions for XBMC video plugins.
+   Copyright (C) 2013 José Antonio Montes (jamontes)
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+   Description:
+   These funtions are called from the main plugin module, aimed to ease and simplify the plugin development process.
+   Release 0.1.1
 '''
 
 # First of all We must import all the libraries used for plugin development.
 import sys, re, urllib, urllib2, json
-import xbmcplugin, xbmcaddon, xbmcgui, xbmc
+import xbmcplugin, xbmcaddon, xbmcgui, xbmc, xbmcaddon
 
-debug_enable = True # Enable the logs to debug mode during development phase.
+
+# This function returns the plugin settings object to main module.
+def get_plugin_settings(plugin_id=""):
+    return xbmcaddon.Addon(id=plugin_id)
+    
+debug_enable = False # The debug logs are disabled by default.
+
+# This function sets the debug_enable var to log everything if debug option is true.
+def set_debug_mode(debug_flag=""):
+    global debug_enable
+    if debug_flag == "true":
+        debug_enable = True
 
 # This function logs the messages into the main XBMC log file. Called from main plugin module.
 def log(message):
@@ -130,7 +156,7 @@ def close_dir(pluginhandle):
 # This funtion shows a popup window with a notices message through the XBMC GUI during 5 secs.
 def showWarning(message):
     _log("showWarning message: %s" % message)
-    xbmc.executebuiltin('XBMC.Notification(Info:,' + message + '!,5000)')
+    xbmc.executebuiltin('XBMC.Notification(Info:,' + message + '!,6000)')
 
 # This function plays the video file pointed by the URL passed as argument.
 def play_resolved_url(pluginhandle= "", url = ""):

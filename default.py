@@ -1,16 +1,36 @@
 # -*- coding: utf-8 -*-
 
 '''
- XBMC tv5monde plugin.
- This is the first trial of the tv5monde plugin for XBMC.
- This plugins gets the videos from tv5mondeplus web page and shows them ordered by category.
- This plugin depends on the lutil library functions.
- jamontes 2013.
+   XBMC tv5monde plugin.
+   Copyright (C) 2013 José Antonio Montes (jamontes)
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+   This is the first trial of the tv5monde plugin for XBMC.
+   This plugins gets the videos from TV5MONDE+ web site and shows them ordered by category.
+   This plugin depends on the lutil library functions.
 '''
 
 import lutil
 
 pluginhandle = int(sys.argv[1])
+plugin_id = 'plugin.video.tv5monde'
+
+settings = lutil.get_plugin_settings(plugin_id)
+translation = settings.getLocalizedString
+
+lutil.set_debug_mode(settings.getSetting("debug"))
 
 # Entry point
 def run():
@@ -70,7 +90,7 @@ def main_list(params):
             genre = lutil.find_first(params.get("url"), pattern_genre)
             next_page_url = 'http://www.tv5mondeplus.com/get/videos?pg=%s&type=genre&sort=%s&loadpg=false&order=date' %  (next_page, genre)
             lutil.log('next_page=%s last_page=%s next_page_url="%s"' % (next_page, last_page, next_page_url))
-            lutil.addDir(action="main_list", title=">> Page suivante", url=next_page_url)
+            lutil.addDir(action="main_list", title=">> %s" % translation(30010), url=next_page_url)
 
     lutil.close_dir(pluginhandle)
 
@@ -95,7 +115,7 @@ def play_video(params):
             return lutil.play_resolved_url(pluginhandle = pluginhandle, url = video_smil)
         else:
             lutil.log("tv5monde.play_video: We did not find the video file URL from the smil info. We cannot play it!!")
-            lutil.showWarning("Cette video n'est plus disponible sur TV5 Monde")
+            lutil.showWarning(translation(30011))
 
 # This function is the entry point to the plugin execution.
 run()

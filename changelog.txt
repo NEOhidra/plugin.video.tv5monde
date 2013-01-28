@@ -18,3 +18,6 @@
 - Modified plugin description.
 - Change the copyleft license from GPLv2 to GPLv3.
 - Eden and Frodo branches splited for pull to oficial repositories. 
+1.0.3
+- Scaled fanart and icon images according to add-ons standards.
+- Added language tag into addon.xml to allow add-ons search by language.

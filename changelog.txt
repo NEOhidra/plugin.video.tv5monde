@@ -20,3 +20,6 @@
 - Eden and Frodo branches splited for pull to oficial repositories. 
 1.1.0
 - Change xbmc.python rel to 2.1.0 for Frodo branch.
+1.1.1
+- Scaled fanart and icon images according to add-ons standards.
+- Added language tag into addon.xml to allow add-ons search by language.

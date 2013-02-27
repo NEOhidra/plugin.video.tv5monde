@@ -46,7 +46,7 @@ def run():
         exec action+"(params)"
 
 def create_index(params):
-    lutil.log("tv5monde.genre_index "+repr(params))
+    lutil.log("tv5monde.create_index "+repr(params))
 
     action = 'genre_index'
     title  = 'Les Genres'
@@ -99,7 +99,6 @@ def emission_index(params):
     for url, title in lutil.find_multiple(cacho_html, emi_pattern):
         url = 'http://www.tv5mondeplus.com%s' % url
         action = 'emission_first_list'
-        #lutil.log('tv5monde.emission_index action=["%s"] title=["%s"] url=["%s"]' % (action, title, url))
         lutil.log('tv5monde.emission_index action=["%s"] url=["%s"]' % (action, url))
         lutil.addDir(action=action, title=title, url=url)
 
@@ -160,14 +159,12 @@ def emission_list(params):
 
     buffer_html = lutil.carga_web(params.get("url"), mi_headers)
     buffer_json = lutil.get_json_dict(buffer_html)
-    #pattern_videos = '<a title="([^"]+)" href=".+?nid=([^"]+)"> <img src="([^"]+)"'
     pattern_videos = '<a title="([^"]+)" href=".+?nid=([^"]+)"> <img src="([^"]+)".*?<p class="date">([^<]+)</p>'
     videolist = lutil.find_multiple(buffer_json['content'], pattern_videos)
     for title, videoid, thumbnail, date in videolist:
         video_url = 'http://www.tv5mondeplus.com/video-xml/get/%s' % videoid
         title = title.replace('&quot;', '"')
         fecha = lutil.limpia_fecha(date)
-        #lutil.log('videolist: URL: "%s" Descripcion: "%s" Date: "%s" Thumbnail: "%s"' % (video_url, title, fecha, thumbnail))
         lutil.log('videolist: URL: "%s" Date: "%s" Thumbnail: "%s"' % (video_url, fecha, thumbnail))
 
         plot = title

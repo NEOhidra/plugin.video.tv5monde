@@ -93,8 +93,6 @@ def get_redirect(url):
 
 # This function returns a json object collected from the web into a dictionary.
 def get_json_dict(MiJSON):
-    #_log("get_json_content " + MiJSON)
-
     return json.loads(MiJSON)
 
 

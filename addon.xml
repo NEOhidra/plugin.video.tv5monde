@@ -14,5 +14,10 @@
         <description lang="es">Este plugin permite ver los vídeos de TV5MONDE contenidos en la página web de TV5MONDE+, seleccionados por categoría y ordenados por fecha de emisión (ES)</description>
         <summary lang="fr">TV5MONDE médiathèque (FR)</summary>
         <description lang="fr">Ce plugin permet de regarder TV5MONDE médiathèque qui se trouve sur le site web de TV5MONDE+ (FR)</description>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=152992</forum>
+        <website></website>
+        <email></email>
+        <source>https://github.com/jamontes/plugin.video.tv5monde</source>
     </extension>
 </addon>
